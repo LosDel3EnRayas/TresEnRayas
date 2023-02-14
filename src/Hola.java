@@ -1,5 +1,5 @@
 
 public class Hola {
 	String text = "Hola compi";
-	int num =0;
+	int num =1;
 }
