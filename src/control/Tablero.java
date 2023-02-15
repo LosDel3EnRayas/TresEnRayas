@@ -8,7 +8,7 @@ public class Tablero {
 	public int getValorPosicion(Coordenada coordenada) {
 		return tablero[coordenada.getX()][coordenada.getY()];
 	}
-
+ 
 	public void setValorPosicion(Coordenada coordenada, int i) {
 		tablero[coordenada.getX()][coordenada.getY()]=i;
 		
