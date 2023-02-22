@@ -5,7 +5,14 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+
+import control.Coordenada;
+import control.Mybutton;
+
 import java.awt.GridLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
 import javax.swing.JButton;
 import java.awt.BorderLayout;
 import javax.swing.JLabel;
@@ -36,37 +43,25 @@ public class UI extends JFrame {
 		JPanel panel = new JPanel();
 		contentPane.add(panel, BorderLayout.CENTER);
 		panel.setLayout(new GridLayout(3, 3, 0, 0));
+		for (int i = 0; i < 3; i++) {
+			for (int j = 0; j < 3; j++) {
+				Mybutton mybutton = new Mybutton(new Coordenada(i, j));	
+				mybutton.addActionListener(new ActionListener() {
+					
+					@Override
+					public void actionPerformed(ActionEvent arg0) {
+						System.out.println("hola "+((Mybutton)arg0.getSource()).getCoordenada().toString());
+						
+					}
+				});
+				panel.add(mybutton);
+			}
+		}
 		
-		JButton btnNewButton_1_1 = new JButton("New button");
-		panel.add(btnNewButton_1_1);
 		
-		JButton btnNewButton_1_1_2 = new JButton("New button");
-		panel.add(btnNewButton_1_1_2);
-		
-		JButton btnNewButton_1_1_1_1 = new JButton("New button");
-		panel.add(btnNewButton_1_1_1_1);
-		
-		JButton btnNewButton_1_1_1_1_1 = new JButton("New button");
-		panel.add(btnNewButton_1_1_1_1_1);
-		
-		JButton btnNewButton_1_1_2_1 = new JButton("New button");
-		panel.add(btnNewButton_1_1_2_1);
-		
-		JButton btnNewButton_1_1_1 = new JButton("New button");
-		panel.add(btnNewButton_1_1_1);
-		
-		JButton btnNewButton_1 = new JButton("New button");
-		panel.add(btnNewButton_1);
-		
-		JButton btnNewButton = new JButton("New button");
-		panel.add(btnNewButton);
-		
-		JButton btnNewButton_1_1_2_2 = new JButton("New button");
-		panel.add(btnNewButton_1_1_2_2);
-		
-		JLabel lblNewLabel = new JLabel("Tres En Raya!!!!!!");
-		lblNewLabel.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		contentPane.add(lblNewLabel, BorderLayout.NORTH);
+		JLabel lblTitle = new JLabel("Tres En Raya!!!!!!");
+		lblTitle.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		contentPane.add(lblTitle, BorderLayout.NORTH);
 		
 		JLabel lblNewLabel_1 = new JLabel("HAS GANADO!!!!!!!!!!!!!!");
 		lblNewLabel_1.setFont(new Font("Tahoma", Font.PLAIN, 20));
