@@ -11,14 +11,18 @@ import javax.swing.JPanel;
 
 import control.GestionDatos;
 import control.Mybutton;
+import control.TipoCasilla;
 
 public class ParaUI extends UI {
 
 	private ActionListener action;
 	private GestionDatos gestion;
+	private TipoCasilla tipos;
 
 	public ParaUI() {
 		super();
+		gestion = new GestionDatos();
+		tipos = new TipoCasilla();
 		this.createEvent();
 		this.addEvents();
 	}
@@ -36,7 +40,7 @@ public class ParaUI extends UI {
 	
 	private void createEvent(){
 		
-		/* CREANDO EVENTOS */
+		/* CREANDO EVENTO PARA LOS BOTONES */
 		
 		this.action = new ActionListener() {
 
@@ -44,6 +48,11 @@ public class ParaUI extends UI {
 			public void actionPerformed(ActionEvent e) {
 				Mybutton button = (Mybutton)e.getSource();
 				System.out.println(button.getCoordenada());
+				System.out.println(gestion.verTurno());
+				gestion.incrementarTurno();
+				
+				button.setText(tipos.getTipo(gestion.verTurno()));
+				
 			}
 			
 		};

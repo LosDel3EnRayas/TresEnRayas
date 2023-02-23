@@ -18,7 +18,7 @@ public class GestionDatos {
 	 * Incrementa el turno
 	 */
 	public void incrementarTurno() {
-		numerojugada += 1;
+		this.numerojugada += 1;
 	}
 	
 	
