@@ -2,7 +2,7 @@ package control;
 
 public class GestionDatos {
 	private Tablero tablero=new Tablero();
-	public int numerojugada = 2;
+	private int numerojugada = 1;
 	/**
 	 * Informa de quien es el turno actual
 	 * 
@@ -13,6 +13,17 @@ public class GestionDatos {
 			return 2;
 		return 1;
 
+	}
+	/**
+	 * Incrementa el turno
+	 */
+	public void incrementarTurno() {
+		numerojugada += 1;
+	}
+	
+	
+	public void jugarPosicion(Coordenada coordenada, int i) {
+		tablero.setValorPosicion(coordenada, i);
 	}
 }
 

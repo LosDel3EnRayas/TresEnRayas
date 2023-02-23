@@ -1,6 +1,12 @@
 package control;
 
 public class Tablero {
+	/*
+	 * 0 = Vacio
+	 * 1 = X
+	 * 2 = O
+	 */
+	
 	public int tablero[][] = { { 0, 0, 0 },
 							   { 0, 1, 0 },
 							   { 0, 0, 0 } };
