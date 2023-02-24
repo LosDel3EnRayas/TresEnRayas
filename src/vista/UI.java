@@ -24,6 +24,8 @@ public class UI extends JFrame {
 
 	protected JPanel contentPane;
 	protected JPanel panel;
+	
+	private Font fuente = new Font("Arial", Font.BOLD, 33);
 
 	/**
 	 * Create the frame.
@@ -44,7 +46,9 @@ public class UI extends JFrame {
 		for (int i = 0; i < 3; i++) {
 			for (int j = 0; j < 3; j++) {
 				Mybutton button = new Mybutton(i+":"+j);
+				button.setFont(fuente);
 				panel.add(button);
+				
 			}
 		}
 		

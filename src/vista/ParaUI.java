@@ -48,10 +48,15 @@ public class ParaUI extends UI {
 			public void actionPerformed(ActionEvent e) {
 				Mybutton button = (Mybutton)e.getSource();
 				System.out.println(button.getCoordenada());
-				System.out.println(gestion.verTurno());
-				gestion.incrementarTurno();
+				 
 				
-				button.setText(tipos.getTipo(gestion.verTurno()));
+				boolean valido = gestion.jugarPosicion(button.getCoordenada(), gestion.verTurno());
+				if(valido) {
+					gestion.incrementarTurno();
+					button.setText(tipos.getTipo(gestion.verTurno()));					
+				}
+				System.out.println("La posicion es :" + valido);
+				
 				
 			}
 			

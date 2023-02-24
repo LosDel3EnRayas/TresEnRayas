@@ -1,5 +1,7 @@
 package control;
 
+import java.util.Iterator;
+
 public class Tablero {
 	/*
 	 * 0 = Vacio
@@ -8,7 +10,7 @@ public class Tablero {
 	 */
 	
 	public int tablero[][] = { { 0, 0, 0 },
-							   { 0, 1, 0 },
+							   { 0, 0, 0 },
 							   { 0, 0, 0 } };
 
 	public int getValorPosicion(Coordenada coordenada) {
@@ -103,5 +105,15 @@ public class Tablero {
 					if (getValorPosicion(new Coordenada(x, y))  == 0)
 						return true;
 		return false;
+	}
+	
+	/*DEBUG*/
+	public void mostrarTablero() {
+		for (int i = 0; i < tablero.length; i++) {
+			for (int j = 0; j < tablero.length; j++) {
+				System.out.print(tablero[i][j] + " ");
+			}
+			System.out.println();
+		}
 	}
 }
