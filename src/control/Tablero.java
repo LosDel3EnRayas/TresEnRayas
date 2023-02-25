@@ -52,9 +52,9 @@ public class Tablero {
 	 * @return true si se da la circunstancia
 	 */
 	private boolean compruebaDiagonal() {
-		if (tablero[0][0] == tablero[1][1] && tablero[1][1] == tablero[2][2])
+		if (tablero[0][0] == tablero[1][1] && tablero[1][1] == tablero[2][2] && tablero[1][1] != 0)
 			return true;
-		if (tablero[0][2] == tablero[1][1] && tablero[1][1] == tablero[2][0])
+		if (tablero[0][2] == tablero[1][1] && tablero[1][1] == tablero[2][0] && tablero[1][1] != 0)
 			return true;
 		return false;
 	}
@@ -79,7 +79,7 @@ public class Tablero {
 	 * @return verdadero si la casilla esta libre y falso en caso contrario
 	 */
 	public boolean mirarCasillaLibre(Coordenada coordenada) {
-		return getValorPosicion(coordenada)  == 0;
+		return getValorPosicion(coordenada) == 0;
 	}
 	/**
 	 * Comprueba si la casilla origen esta ocupada por una ficha de la propiedad del
@@ -88,7 +88,7 @@ public class Tablero {
 	 * @return true si casilla pertenece al turno actual o false en caso contrario
 	 */
 	public boolean comprobarPropiedad(Coordenada coordenada, int turno) {
-		return getValorPosicion(coordenada) ==turno;
+		return getValorPosicion(coordenada) == turno;
 	}
 	
 

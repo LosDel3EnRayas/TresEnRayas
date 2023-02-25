@@ -24,6 +24,7 @@ public class UI extends JFrame {
 
 	protected JPanel contentPane;
 	protected JPanel panel;
+	protected JLabel winLabel;
 	
 	private Font fuente = new Font("Arial", Font.BOLD, 33);
 
@@ -56,8 +57,8 @@ public class UI extends JFrame {
 		lblTitle.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		contentPane.add(lblTitle, BorderLayout.NORTH);
 		
-		JLabel lblNewLabel_1 = new JLabel("HAS GANADO!!!!!!!!!!!!!!");
-		lblNewLabel_1.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		contentPane.add(lblNewLabel_1, BorderLayout.SOUTH);
+		winLabel = new JLabel(" ");
+		winLabel.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		contentPane.add(winLabel, BorderLayout.SOUTH);
 	}
 }
