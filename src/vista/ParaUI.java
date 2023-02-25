@@ -1,5 +1,6 @@
 package vista;
 
+import java.awt.Color;
 import java.awt.Component;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -110,12 +111,15 @@ public class ParaUI extends UI {
 		Component[] botonera = this.panel.getComponents();
 		for(Component boton : botonera) {
 			boton.setEnabled(false);
+			if(((Mybutton) boton).getText() == tipos.getTipo(gestion.verTurno())) {
+				boton.setBackground(new Color(190,220,140));
+			}
 		}
 		
 	}
 	
 	private void mostrarVictoria() {
-		this.winLabel.setText(String.format("Juego terminado, ganan l@s %s",tipos.getTipo(gestion.verTurno())));
+		this.winLabel.setText(String.format("Juego terminado, ganan l@s '%s'",tipos.getTipo(gestion.verTurno())));
 	}
 	
 	private void setBotonAnterior(Mybutton button) {
