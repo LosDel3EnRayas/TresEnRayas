@@ -1,23 +1,51 @@
 package control;
 
-import java.awt.EventQueue;
-import vista.UI;
-
 public class Juego {
-
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					UI frame = new UI();
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-		
-		
+	private boolean mover;
+	private boolean existsBotonAnterior;
+	private Mybutton botonAnterior;
+	private Mybutton botonActual;
+	
+	
+	
+	public Juego() {
+		super();
+		this.mover = false;
+		this.existsBotonAnterior = false;
 	}
+
+	public boolean getMover() {
+		return mover;
+	}
+	
+	public void setMover(boolean state) {
+		this.mover = state;
+	}
+	
+
+	public Mybutton getBotonAnterior() {
+		return botonAnterior;
+	}
+	
+	public void setBotonAnterior(Mybutton botonAnterior) {
+		this.botonAnterior = botonAnterior;
+	}
+
+	public Mybutton getBotonActual() {
+		return botonActual;
+	}
+
+	public void setBotonActual(Mybutton botonActual) {
+		this.botonActual = botonActual;
+	}
+	
+	public boolean existsBotonAnterior() {
+		return existsBotonAnterior;
+	}
+
+	public void setExistsBotonAnterior(boolean existsBotonAnterior) {
+		this.existsBotonAnterior = existsBotonAnterior;
+	}
+	
 
 }
